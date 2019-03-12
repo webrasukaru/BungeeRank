@@ -1,0 +1,7 @@
+name: BungeeRank
+main: net.devras.bungee.rank.API
+version: 1.0.0
+author: kemasama
+description: Easy rank system need bungee nick
+
+
