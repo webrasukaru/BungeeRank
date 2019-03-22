@@ -1,11 +1,17 @@
 package net.devras.bungee.rank;
 
+<<<<<<< HEAD
 import java.io.File;
+=======
+>>>>>>> bungeerank/master
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
+<<<<<<< HEAD
 import net.devras.bungee.rank.data.RankData;
+=======
+>>>>>>> bungeerank/master
 import net.devras.nick.Nick;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PostLoginEvent;
@@ -54,8 +60,11 @@ public class API extends Plugin implements Listener{
 
 		getProxy().getPluginManager().registerCommand(this, new RankCommand());
 		getProxy().getPluginManager().registerListener(this, this);
+<<<<<<< HEAD
 
 		RankData.load(new File(getDataFolder(), "ranks.yml"));
+=======
+>>>>>>> bungeerank/master
 	}
 
 	@EventHandler
@@ -69,12 +78,16 @@ public class API extends Plugin implements Listener{
 				try {
 					while (res.next()) {
 						int id = res.getInt("id");
+<<<<<<< HEAD
 						/*
+=======
+>>>>>>> bungeerank/master
 						Rank rank = Rank.getRank(id);
 						if (!rank.equals(Rank.NONE)) {
 							String disp = "§6[" + rank.getPrefix() + "§r§6] §r" + p.getName();
 							Nick.send("Nick", "setnickname", uuid.toString(), disp);
 						}
+<<<<<<< HEAD
 						*/
 
 						RankData data = RankData.getRank(id);
@@ -84,6 +97,8 @@ public class API extends Plugin implements Listener{
 						}else {
 							Nick.send("Nick", "setnickname", p.getUniqueId().toString(), p.getName());
 						}
+=======
+>>>>>>> bungeerank/master
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();

@@ -1,6 +1,9 @@
 package net.devras.bungee.rank;
 
+<<<<<<< HEAD
 import net.devras.bungee.rank.data.RankData;
+=======
+>>>>>>> bungeerank/master
 import net.devras.nick.Nick;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
@@ -27,7 +30,11 @@ public class RankCommand extends Command {
 				return;
 			}
 
+<<<<<<< HEAD
 			if (id >= 0) {
+=======
+			if (id >= 0 && id <= 10) {
+>>>>>>> bungeerank/master
 				new Thread(new Runnable() {
 					@Override
 					public void run() {
@@ -37,12 +44,16 @@ public class RankCommand extends Command {
 						String sql = String.format(base, player.getUniqueId().toString(), id);
 						MySQL.update(sql);
 
+<<<<<<< HEAD
 						/*
+=======
+>>>>>>> bungeerank/master
 						Rank rank = Rank.getRank(id);
 						if (!rank.equals(Rank.NONE)) {
 							String disp = "§6[" + rank.getPrefix() + "§r§6] §r" + player.getName();
 							Nick.send("Nick", "setnickname", player.getUniqueId().toString(), disp);
 						}
+<<<<<<< HEAD
 						*/
 
 						RankData data = RankData.getRank(id);
@@ -52,6 +63,8 @@ public class RankCommand extends Command {
 						}else {
 							Nick.send("Nick", "setnickname", player.getUniqueId().toString(), player.getName());
 						}
+=======
+>>>>>>> bungeerank/master
 					}
 				}).start();
 
@@ -59,6 +72,7 @@ public class RankCommand extends Command {
 				comp.append("Success Query").color(ChatColor.GREEN).bold(true);
 				sender.sendMessage(comp.create());
 				return;
+<<<<<<< HEAD
 			}
 
 		}
@@ -66,5 +80,19 @@ public class RankCommand extends Command {
 		ComponentBuilder comp = new ComponentBuilder("");
 		comp.append("/rank <name> <id>").color(ChatColor.RED).bold(true);
 		sender.sendMessage(comp.create());
+=======
+			}else {
+				ComponentBuilder comp = new ComponentBuilder("");
+				comp.append("Id Allow range: 0 - 10").color(ChatColor.RED).bold(true);
+				sender.sendMessage(comp.create());
+				return;
+			}
+
+		}else {
+			ComponentBuilder comp = new ComponentBuilder("");
+			comp.append("/rank <name> <id>").color(ChatColor.RED).bold(true);
+			sender.sendMessage(comp.create());
+		}
+>>>>>>> bungeerank/master
 	}
 }

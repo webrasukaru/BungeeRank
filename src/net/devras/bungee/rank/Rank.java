@@ -43,6 +43,7 @@ public enum Rank {
 		return this.suffix;
 	}
 
+<<<<<<< HEAD
 	public void setPrefix(String prefix) {
 		this.prefix = prefix;
 	}
@@ -50,4 +51,6 @@ public enum Rank {
 		this.suffix = suffix;
 	}
 
+=======
+>>>>>>> bungeerank/master
 }
